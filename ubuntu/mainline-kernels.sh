@@ -129,6 +129,13 @@ remove_installed_mainline_kernels ()
     fi
 }
 
+# environment checking
+if [[ ! -x $(which dialog) ]]; then
+    echo please install dialog first;
+    exit
+fi
+
+
 if [ -n "$remove" ]; then
     remove_installed_mainline_kernels
     exit
